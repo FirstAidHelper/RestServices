@@ -5,15 +5,15 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.5.RELEASE</version>
+		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ibm</groupId>
-	<artifactId>marksafe</artifactId>
+	<artifactId>fah</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<name>marksafe</name>
-	<description>MarkSafe project for Earthquake healthcare assistance</description>
+	<packaging>jar</packaging>
+	<name>firstaidhelper</name>
+	<description>FirstAidHelper project for Earthquake healthcare assistance</description>
 
 	<properties>
 		<java.version>1.8</java.version>
