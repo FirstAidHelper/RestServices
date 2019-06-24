@@ -1,4 +1,4 @@
-package com.ibm.fah;
+package com.ibm.fah.mongodb;
 
 import java.io.IOException;
 import cz.jirutka.spring.embedmongo.EmbeddedMongoFactoryBean;
