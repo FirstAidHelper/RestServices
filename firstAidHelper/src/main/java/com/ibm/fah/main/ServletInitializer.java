@@ -1,4 +1,4 @@
-package com.ibm.fah;
+package com.ibm.fah.main;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
