@@ -14,17 +14,17 @@ spec:
       - name: regsecret
       containers:
       - name: fah
-        image: de.icr.io/firstaid/firstaidhelper:5
+        image: de.icr.io/firstaid/firstaidhelper:4
         imagePullPolicy: Always
         ports:
          - name: http
            containerPort: 8080
         env:
-          - name: MONGO_HOST
+          - name: MONGO_SERVICE
             valueFrom:
               configMapKeyRef:
                 name: mongo-credentials
-                key: host 
+                key: service 
           - name: MONGO_PORT
             valueFrom:
               configMapKeyRef:

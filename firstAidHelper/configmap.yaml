@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: mongo-credentials
 data:
-  host: firstaid-dev-mongodb.dev
+  service: firstaid-mongodb
   port: "27017"
   database: my-database
-  username: my-username
+  username: my-user
