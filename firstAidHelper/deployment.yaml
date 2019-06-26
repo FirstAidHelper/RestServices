@@ -10,13 +10,41 @@ spec:
         app: fah
         tier: backend
     spec:
-     containers:
+      imagePullSecrets:
+      - name: regsecret
+      containers:
       - name: fah
         image: de.icr.io/firstaid/firstaidhelper:4
         imagePullPolicy: Always
         ports:
-            - name: http
-              containerPort: 8080
+         - name: http
+           containerPort: 8080
+        env:
+          - name: MONGO_SERVICE
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-credentials
+                key: service 
+          - name: MONGO_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-credentials
+                key: port         
+          - name: MONGO_DATABASE
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-credentials
+                key: database 
+          - name: MONGO_USERNAME
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-credentials
+                key: username 
+          - name: MONGO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: firstaid-dev-mongodb
+                key: mongodb-password
 ---
 apiVersion: v1
 kind: Service
@@ -30,6 +58,6 @@ spec:
   - protocol: TCP
     port: 8080
     targetPort: http
-    nodePort: 31237
+    nodePort: 31238
   selector:
     app: fah
